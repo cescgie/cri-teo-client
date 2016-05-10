@@ -1,0 +1,18 @@
+<div class="container" ng-controller="HomeCtrl" >
+  <div class="panel panel-default">
+    <div class="panel-heading">Kampagne</div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-12">
+          <table>
+            <tr ng-repeat="auftrag in auftrags">
+              <td>
+                <a href="#/auftrag/{{auftrag.Auftragsnummer}}/{{auftrag.Auftragsposition}}"> {{auftrag.kampagne}}</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
