@@ -4,6 +4,7 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-md-12">
+          <legend>Datum</legend>
           <table datatable="ng" class="row-border hover">
             <thead>
               <tr>
@@ -13,8 +14,10 @@
                 <th>imp_iq</th>
                 <th>view_iq</th>
                 <th>click_iq</th>
+                <th>ctr_iq</th>
                 <th>imp_ad</th>
                 <th>click_ad</th>
+                <th>ctr_ad</th>
               </tr>
             </thead>
             <tbody>
@@ -22,14 +25,18 @@
                 <td>{{kampagne.datum}}</td>
                 <td>{{kampagne.Auftragsnummer}}</td>
                 <td>{{kampagne.Auftragsposition}}</td>
-                <td>{{kampagne.imp_iq_diff}}</td>
-                <td>{{kampagne.view_iq_diff}}</td>
-                <td>{{kampagne.click_iq_diff}}</td>
-                <td>{{kampagne.imp_ad_diff}}</td>
-                <td>{{kampagne.click_ad_diff}}</td>
+                <td>{{kampagne.imp_iq_diff | number : fractionSize}}</td>
+                <td>{{kampagne.view_iq_diff | number : fractionSize}}</td>
+                <td>{{kampagne.click_iq_diff | number : fractionSize}}</td>
+                <td>{{kampagne.ctr_iq | number:2}} %</td>
+                <td>{{kampagne.imp_ad_diff | number : fractionSize}}</td>
+                <td>{{kampagne.click_ad_diff | number : fractionSize}}</td>
+                <td>{{kampagne.ctr_ad | number:2}} %</td>
               </tr>
             </tbody>
           </table>
+          <hr>
+          <legend>Monat</legend>
         </div>
       </div>
     </div>
