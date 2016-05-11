@@ -116,6 +116,40 @@ class Criteo extends Controller {
        //ctr_ad
        $array[$key]['ctr_ad'] = ($array[$key]['click_ad_diff']/$array[$key]['imp_ad_diff'])*100;
      }
+
+     /**
+     * get latest month wert
+     */
+     $select = "*";
+     $current_month = date('m-Y');
+     $clause = "WHERE Auftragsnummer = '$auftragsnummer' AND Auftragsposition= '$auftragsposition' AND Month(datum) = '$current_month'";
+     $data["data2"] = $this->_model->selectClauseGroupByOrderBy("gregtool_erfuellung",$select,$clause,null,null);
+     $lastid = count($data["data2"])-1;
+     $newarray_id = count($array);
+
+     $array[$newarray_id]['datum'] = $current_month;
+     $array[$newarray_id]['Auftragsnummer'] = $data["data2"][$lastid]['Auftragsnummer'];
+     $array[$newarray_id]['Auftragsposition'] = $data["data2"][$lastid]['Auftragsposition'];
+     //imp_iq
+     $array[$newarray_id]['imp_iq'] = $data["data2"][$lastid]['imp_iq'];
+     $array[$newarray_id]['imp_iq_diff'] =  $data["data2"][$lastid]['imp_iq']-$array[$newarray_id-1]['imp_iq'];
+     //view_iq
+     $array[$newarray_id]['view_iq'] = $data["data2"][$lastid]['view_iq'];
+     $array[$newarray_id]['view_iq_diff'] =  $data["data2"][$lastid]['view_iq']-$array[$newarray_id-1]['view_iq'];
+     //click_iq
+     $array[$newarray_id]['click_iq'] = $data["data2"][$lastid]['click_iq'];
+     $array[$newarray_id]['click_iq_diff'] =  $data["data2"][$lastid]['click_iq']-$array[$newarray_id-1]['click_iq'];
+     //ctr_iq
+     $array[$newarray_id]['ctr_iq'] = ($array[$newarray_id]['click_iq_diff']/$array[$newarray_id]['view_iq_diff'])*100;
+     //imp_ad
+     $array[$newarray_id]['imp_ad'] = $data["data2"][$lastid]['imp_ad'];
+     $array[$newarray_id]['imp_ad_diff'] =  $data["data2"][$lastid]['imp_ad'] - $array[$newarray_id-1]['imp_ad'];
+     //click_ad
+     $array[$newarray_id]['click_ad'] = $data["data2"][$lastid]['click_ad'];
+     $array[$newarray_id]['click_ad_diff'] =  $data["data2"][$lastid]['click_ad'] - $array[$newarray_id-1]['click_ad'];
+     //ctr_ad
+     $array[$newarray_id]['ctr_ad'] = ($array[$newarray_id]['click_ad_diff']/$array[$newarray_id]['imp_ad_diff'])*100;
+
      return print_r(json_encode($array));
    }
 
