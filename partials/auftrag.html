@@ -21,17 +21,17 @@
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="kampagne in datumkampagnes">
-                <td>{{kampagne.datum}}</td>
-                <td>{{kampagne.Auftragsnummer}}</td>
-                <td>{{kampagne.Auftragsposition}}</td>
-                <td>{{kampagne.imp_iq_diff | number : fractionSize}}</td>
-                <td>{{kampagne.view_iq_diff | number : fractionSize}}</td>
-                <td>{{kampagne.click_iq_diff | number : fractionSize}}</td>
-                <td>{{kampagne.ctr_iq | number:2}} %</td>
-                <td>{{kampagne.imp_ad_diff | number : fractionSize}}</td>
-                <td>{{kampagne.click_ad_diff | number : fractionSize}}</td>
-                <td>{{kampagne.ctr_ad | number:2}} %</td>
+              <tr ng-repeat="dkampagne in datumkampagnes">
+                <td>{{dkampagne.datum}}</td>
+                <td>{{dkampagne.Auftragsnummer}}</td>
+                <td>{{dkampagne.Auftragsposition}}</td>
+                <td>{{dkampagne.imp_iq_diff | number : fractionSize}}</td>
+                <td>{{dkampagne.view_iq_diff | number : fractionSize}}</td>
+                <td>{{dkampagne.click_iq_diff | number : fractionSize}}</td>
+                <td>{{dkampagne.ctr_iq | number:2}} %</td>
+                <td>{{dkampagne.imp_ad_diff | number : fractionSize}}</td>
+                <td>{{dkampagne.click_ad_diff | number : fractionSize}}</td>
+                <td>{{dkampagne.ctr_ad | number:2}} %</td>
               </tr>
             </tbody>
           </table>
@@ -53,17 +53,17 @@
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="kampagne in monatkampagnes">
-                <td>{{kampagne.datum}}</td>
-                <td>{{kampagne.Auftragsnummer}}</td>
-                <td>{{kampagne.Auftragsposition}}</td>
-                <td>{{kampagne.imp_iq_diff | number : fractionSize}}</td>
-                <td>{{kampagne.view_iq_diff | number : fractionSize}}</td>
-                <td>{{kampagne.click_iq_diff | number : fractionSize}}</td>
-                <td>{{kampagne.ctr_iq | number:2}} %</td>
-                <td>{{kampagne.imp_ad_diff | number : fractionSize}}</td>
-                <td>{{kampagne.click_ad_diff | number : fractionSize}}</td>
-                <td>{{kampagne.ctr_ad | number:2}} %</td>
+              <tr ng-repeat="mkampagne in monatkampagnes">
+                <td>{{mkampagne.datum}}</td>
+                <td>{{mkampagne.Auftragsnummer}}</td>
+                <td>{{mkampagne.Auftragsposition}}</td>
+                <td>{{mkampagne.imp_iq_diff | number : fractionSize}}</td>
+                <td>{{mkampagne.view_iq_diff | number : fractionSize}}</td>
+                <td>{{mkampagne.click_iq_diff | number : fractionSize}}</td>
+                <td>{{mkampagne.ctr_iq | number:2}} %</td>
+                <td>{{mkampagne.imp_ad_diff | number : fractionSize}}</td>
+                <td>{{mkampagne.click_ad_diff | number : fractionSize}}</td>
+                <td>{{mkampagne.ctr_ad | number:2}} %</td>
               </tr>
             </tbody>
           </table>

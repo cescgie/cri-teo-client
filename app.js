@@ -1,4 +1,4 @@
-var app = angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.router', 'angularSpinner', '720kb.datepicker', 'datatables']);
+var app = angular.module('MyApp', ['ngResource', 'ui.router', 'datatables']);
 
 app.config(function($stateProvider, $urlRouterProvider,$anchorScrollProvider) {
 
