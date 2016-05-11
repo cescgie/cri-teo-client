@@ -88,7 +88,7 @@ class Criteo extends Controller {
      $default_click_ad = 0;
      $vales = [];
      foreach ($data["data"] as $key => $value) {
-       $array[$key]['datum'] = date('m-Y', strtotime($value['datum']));
+       $array[$key]['datum'] = date('m-Y', strtotime($value['datum']." -1 month"));
        $array[$key]['Auftragsnummer'] = $value['Auftragsnummer'];
        $array[$key]['Auftragsposition'] = $value['Auftragsposition'];
        //imp_iq
@@ -98,7 +98,7 @@ class Criteo extends Controller {
        //view_iq
        $array[$key]['view_iq'] = $value['view_iq'];
        $array[$key]['view_iq_diff'] =  $value['view_iq'] - $default_view_iq;
-       $default_view_iq = $array[$key-1]['view_iq'] + $array[$key]['view_iq_diff']; 
+       $default_view_iq = $array[$key-1]['view_iq'] + $array[$key]['view_iq_diff'];
        //click_iq
        $array[$key]['click_iq'] = $value['click_iq'];
        $array[$key]['click_iq_diff'] =  $value['click_iq'] - $default_click_iq;
