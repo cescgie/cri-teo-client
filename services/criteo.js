@@ -3,8 +3,11 @@ app.factory('Criteo', function($http) {
       getAllAuftrag: function(){
         return $http.get('api/criteo/getAuftrag');
       },
-      getOneKampagne:function(setParams){
-        return $http.get('api/criteo/getKampagne/'+setParams.Auftragsnummer+'/'+setParams.Auftragsposition);
+      getOneKampagneDatum:function(setParams){
+        return $http.get('api/criteo/getKampagneDatum/'+setParams.Auftragsnummer+'/'+setParams.Auftragsposition);
+      },
+      getOneKampagneMonat:function(setParams){
+        return $http.get('api/criteo/getKampagneMonat/'+setParams.Auftragsnummer+'/'+setParams.Auftragsposition);
       }
     }
   });
